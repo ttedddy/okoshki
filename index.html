@@ -1,117 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
-    <title>Home</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Окна вашего дома</title>
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <main class="main">
-      <header class="header">
+    <header>
+      <nav class="navbar">
         <div class="container">
-          <div class="logo">
-            <img src="images/logo.png" alt="logo" />
-          </div>
-          <nav class="menu">
-            <ul>
-              <li><a href="#windows">Наши сапы</a></li>
-              <li><a href="#order">Забронировать</a></li>
-            </ul>
-          </nav>
-          <a href="tel:+7 929 544 44 31" class="phone">+7-929-544-44-31</a>
+          <a href="index.html" class="logo">Окна вашего дома</a>
+          <ul class="nav-links">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="services.html">Услуги</a></li>
+          </ul>
         </div>
-      </header>
+      </nav>
+    </header>
 
-      <section class="main-content">
+    <main>
+      <section class="hero">
         <div class="container">
-          <img src="images/window-man.png" alt="window-man" class="window-man" />
-          <div class="main-info">
-            <h1>Покорите реку верхом на надувной доске!</h1>
-            <a href="#windows" class="button" id="main-action-button"
-              >Посмотреть сапы</a
-            >
-          </div>
-          <img src="images/waves.png" alt="waves" class="main-image" />
+          <h1>Качественные окна для вашего комфорта</h1>
+          <p>
+            Мы предлагаем широкий выбор окон от ведущих производителей. Наши
+            окна обеспечат тепло и уют в вашем доме.
+          </p>
+          <img src="images/window-hero.jpg" alt="Окно в интерьере" />
         </div>
       </section>
-      <div class="gray-block"></div>
+
+      <section class="products">
+        <div class="container">
+          <h2>Наши окна</h2>
+          <div class="product-cards">
+            <div class="product-card">
+              <img src="images/window1.jpg" alt="Окно 1" />
+              <h3>Классическое окно</h3>
+              <p>Двухкамерный стеклопакет, фурнитура Roto</p>
+              <p class="price">от 15 000 ₽</p>
+            </div>
+            <div class="product-card">
+              <img src="images/window2.jpg" alt="Окно 2" />
+              <h3>Энергосберегающее окно</h3>
+              <p>Тройной стеклопакет, Low-E покрытие</p>
+              <p class="price">от 20 000 ₽</p>
+            </div>
+            <div class="product-card">
+              <img src="images/window3.jpg" alt="Окно 3" />
+              <h3>Панорамное окно</h3>
+              <p>Усиленная конструкция, широкий профиль</p>
+              <p class="price">от 30 000 ₽</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contacts">
+        <div class="container">
+          <h2>Свяжитесь с нами</h2>
+          <div class="contact-info">
+            <p>Телефон: <a href="tel:+7 929 544 44 31">+7-929-544-44-31</a></p>
+            <p>
+              Email:
+              <a href="mailto:shitovatata168@gmail.com"
+                >shitovatata168@gmail.com</a
+              >
+            </p>
+            <p>Адрес: г. Москва</p>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <section class="windows" id="windows">
+    <footer>
       <div class="container">
-        <h2>Выберите сап</h2>
-        <div class="windows-content" id="windows-content">
-          <aside class="windows-filter">
-            <ul>
-              <li class="active">Все сапы</li>
-              <li>Двухместный</li>
-              <li>Одноместный</li>
-            </ul>
-          </aside>
-          <div class="windows-items">
-            <article class="window">
-              <img src="images/window-cosmos.png" alt="Космонавт Двухместный" />
-              <div class="window-details">
-                <h4>Сап "Космонавт" (двухместный)</h4>
-                <p>Двухместный сап с ярким рисунком!</p>
-                <div class="window-action">
-                  <ul>
-                    <li>
-                      <div class="window-period">На 1 час</div>
-                      <div class="window-price">1450 <span>руб./час.</span></div>
-                    </li>
-                    <li>
-                      <div class="window-period">На 2-3 часа</div>
-                      <div class="window-price">1300 <span>руб./час.</span></div>
-                    </li>
-                    <li>
-                      <div class="window-period">На 3+ часов</div>
-                      <div class="window-price">1100 <span>руб./час.</span></div>
-                    </li>
-                  </ul>
-                  <a href="#order"
-                  class="button white-button"
-                  id="window-order-action"
-                  onclick="showTitle()"
-                  >Забронировать</a>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="order" id="order">
-      <div class="container">
-        <img src="images/order-pic.jpg" alt="Order window" />
-        <form [formGroup]="orderForm">
-          <h3>Забронируйте сап</h3>
-          <p>
-            Заполните контактные данные, и мы перезвоним вам для обсуждения
-            деталей и подтверждения бронирования
-          </p>
-          <div class="order-form">
-            <input type="text" placeholder="Выбранный сап" id="window" readonly/>
-            <input type="text" placeholder="Ваше имя" id="name" />
-            <input type="text" placeholder="Ваш телефон" id="phone" />
-            <button class="button" type="button" id="order-action">
-              Забронировать
-            </button>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="logo">
-          <img src="images/logo.png" alt="logo" />
-        </div>
-        <div class="rights">все права защищены</div>
+        <p>© 2025 Окна вашего дома</p>
       </div>
     </footer>
+
     <script src="scripts/script.js"></script>
   </body>
 </html>
